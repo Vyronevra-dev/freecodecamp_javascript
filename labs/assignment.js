@@ -47,3 +47,13 @@ const noDashb + noDasha.replace("_", "");
 noDashb + noDasha.replace("_", "");
 const noDashb = noDasha.replace("_", ""); 
 console.log(noDashb);
+let url = "http://my awesome blog post title";
+url = url.replaceAll(" ", "-");
+'http://my-awesome-blog-post-title'
+url = url.replace("http", "https");
+'https://my-awesome-blog-post-title'
+const rawInput = "  Alice Wanjiku  ";
+const noWhites = rawInput.trim();
+const lowerCase = noWhites.toLowerCase();
+const userName = lowerCase.replace(" ", "_");
+console.log(userName);
