@@ -43,7 +43,6 @@ const noDash3 = capitals1.replace("_", "");
 console.log(noDash3);
 const noDasha = noDash3.replace("_", "");
 console.log(noDasha);
-const noDashb + noDasha.replace("_", "");
 noDashb + noDasha.replace("_", "");
 const noDashb = noDasha.replace("_", ""); 
 console.log(noDashb);
