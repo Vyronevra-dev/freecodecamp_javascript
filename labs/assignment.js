@@ -43,7 +43,6 @@ const noDash3 = capitals1.replace("_", "");
 console.log(noDash3);
 const noDasha = noDash3.replace("_", "");
 console.log(noDasha);
-noDashb + noDasha.replace("_", "");
 const noDashb = noDasha.replace("_", ""); 
 console.log(noDashb);
 let url = "http://my awesome blog post title";
@@ -56,3 +55,7 @@ const noWhites = rawInput.trim();
 const lowerCase = noWhites.toLowerCase();
 const userName = lowerCase.replace(" ", "_");
 console.log(userName);
+const file = "student_grades_2025.xlsx";
+console.log(file.slice(19));
+console.log(file.slice(0, 19));
+
