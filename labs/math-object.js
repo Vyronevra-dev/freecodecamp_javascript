@@ -9,6 +9,7 @@ const b = 4;
 const c = Math.hypot(a, b);
 
 console.log(c);
+console.log(typeof c);
 
 const randomNumber = Math.floor(Math.random() * 100) + 1;
 
