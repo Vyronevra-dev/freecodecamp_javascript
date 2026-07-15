@@ -8,5 +8,6 @@ fruits.forEach(function(fruit) {
 const numbers = [1, 2, 3, 4];
 
 const doubled = numbers.map(function(num) {
-	return num * 2;
+	return num * 2
+	
 });
