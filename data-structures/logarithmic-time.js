@@ -4,16 +4,16 @@
 **/
 
 function binarySearch(sortedArr, target) {
-	let low = 0;
-	let high = sortedArr.length - 1;
+	let lowestIndex = 0;
+	let highestIndex = sortedArr.length - 1;
 
-	while (low <= high) {
-		const mid = Math.floor((low + high) / 2);
-		if (sortedArr[mid] === target) return mid;
-		if (sortedArr[mid] < target) low = mid + 1;
-		else high = mid - 1;
+	while (lowestIndex <= highestIndex) {
+		const middleIndex = Math.floor((lowestIndex + highestIndex) / 2);
+		if (sortedArr[middleIndex] === target) return `${sortedArr[middleIndex]} is in the middle of the array. With index ${middleIndex}.`;
+		if (sortedArr[middleIndex] < target) lowestIndex = middleIndex + 1;
+		else highestIndex = middleIndex - 1;
 	}
 	return -1;
 }
 
-console.log(binarySearch([2, 5, 8, 12, 16, 23, 38, 45], 23));
+console.log(binarySearch([10, 20, 30, 40, 50, 60, 70], 40));
