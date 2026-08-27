@@ -9,6 +9,8 @@ function binarySearch(sortedArr, target) {
 
 	while (lowestIndex <= highestIndex) {
 		const middleIndex = Math.floor((lowestIndex + highestIndex) / 2);
+
+		console.log(`Lowest Index: ${lowestIndex}, Middle Index: ${middleIndex}, Highest Index: ${highestIndex}`);
 		if (sortedArr[middleIndex] === target) return `${sortedArr[middleIndex]} is in the middle of the array. With index ${middleIndex}.`;
 		if (sortedArr[middleIndex] < target) lowestIndex = middleIndex + 1;
 		else highestIndex = middleIndex - 1;
