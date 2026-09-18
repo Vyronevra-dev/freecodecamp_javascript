@@ -1,0 +1,34 @@
+html {
+  overflow-y: hidden;
+}
+
+body {
+  background-color: #2f2f2f;
+  color: #f0f0f0;
+  font-family: "Arial", Sans-serif;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+textarea:focus {
+  outline: none;
+  font-family: "Times New Roman";
+  font-size: 17px;
+}
+
+p {
+  text-align: center;
+  font-weight: 900;
+  font-size: 18px;
+}
