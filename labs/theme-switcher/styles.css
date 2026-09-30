@@ -1,0 +1,151 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  background-color: #f4f4f9;
+  color: #333333;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Theme Dropdown Container */
+.theme-switcher-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* Button styles */
+#theme-switcher-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#theme-switcher-button:hover {
+  background-color: #1d4ed8;
+}
+
+#theme-switcher-button:active {
+  transform: scale(0.98);
+}
+
+/* Dropdown Menu */
+#theme-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #1f2937;
+  list-style: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 160px;
+  overflow: hidden;
+  z-index: 10;
+  border: 1px solid #e5e7eb;
+}
+
+#theme-dropdown[hidden] {
+  display: none;
+}
+
+#theme-dropdown li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+#theme-dropdown li:hover,
+#theme-dropdown li:focus {
+  background-color: #f3f4f6;
+  outline: none;
+}
+
+/* Status message (aria-live="polite") */
+#status-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dynamic Theme Classes applied to body */
+body.theme-light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+body.theme-light .container {
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+body.theme-dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+body.theme-dark .container {
+  background: #1e293b;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+body.theme-dark #status-message {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-ocean {
+  background-color: #0369a1;
+  color: #f0f9ff;
+}
+body.theme-ocean .container {
+  background: #075985;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+body.theme-ocean #status-message {
+  background-color: rgba(255, 255, 255, 0.15);
+}

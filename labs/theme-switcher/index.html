@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Switcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="container">
+    <h1>Theme Switcher</h1>
+    <p>Select a theme from the dropdown menu below to change the appearance of the page.</p>
+
+    <div class="theme-switcher-wrapper">
+      <button 
+        id="theme-switcher-button" 
+        aria-haspopup="true" 
+        aria-expanded="false" 
+        aria-controls="theme-dropdown"
+      >
+        Switch Theme
+      </button>
+
+      <ul 
+        id="theme-dropdown" 
+        role="menu" 
+        aria-labelledby="theme-switcher-button" 
+        hidden
+      >
+        <li id="theme-light" role="menuitem" tabindex="0">light</li>
+        <li id="theme-dark" role="menuitem" tabindex="0">dark</li>
+        <li id="theme-ocean" role="menuitem" tabindex="0">ocean</li>
+      </ul>
+    </div>
+
+    <!-- Live region for accessibility notifications -->
+    <div id="status-message" aria-live="polite">
+      Select a theme to see the message!
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
