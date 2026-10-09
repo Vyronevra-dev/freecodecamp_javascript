@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palindrome Checker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <main class="container">
+    <header class="app-header">
+      <div class="badge">
+        <span class="pulse"></span>
+        Interactive String Analyzer
+      </div>
+      <h1>Palindrome <span>Checker</span></h1>
+      <p class="subtitle">A palindrome is a word, phrase, or sequence that reads the same backward as forward, ignoring punctuation, case, and spacing.</p>
+    </header>
+
+    <section class="card shadow-lg">
+      <div class="input-group">
+        <label for="text-input" class="input-label">Enter a word or phrase to test:</label>
+        <div class="field-wrapper">
+          <input 
+            type="text" 
+            id="text-input" 
+            placeholder="e.g. A man, a plan, a canal. Panama"
+            autocomplete="off" 
+          />
+          <button id="check-btn" type="button">
+            <span>Check</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Result element required by FCC specs -->
+      <div id="result" class="result-box hidden"></div>
+
+      <!-- Detailed Visual Breakdown -->
+      <div id="analysis" class="analysis-box hidden">
+        <h2 class="analysis-title">Breakdown Analysis</h2>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Original String</span>
+            <span id="stat-original" class="stat-value mono">--</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Cleaned Alphanumeric</span>
+            <span id="stat-cleaned" class="stat-value mono">--</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Reversed Sequence</span>
+            <span id="stat-reversed" class="stat-value mono">--</span>
+          </div>
+        </div>
+
+        <div id="letter-matrix" class="matrix-container"></div>
+      </div>
+    </section>
+
+    <!-- Quick Presets -->
+    <section class="presets-section">
+      <h2 class="presets-title">Try standard examples:</h2>
+      <div class="preset-tags">
+        <button class="preset-btn" data-value="A">"A"</button>
+        <button class="preset-btn" data-value="eye">"eye"</button>
+        <button class="preset-btn" data-value="_eye">"_eye"</button>
+        <button class="preset-btn" data-value="race car">"race car"</button>
+        <button class="preset-btn" data-value="A man, a plan, a canal. Panama">"A man, a plan..."</button>
+        <button class="preset-btn" data-value="never odd or even">"never odd or even"</button>
+        <button class="preset-btn" data-value="My age is 0, 0 si ega ym.">"My age is 0, 0..."</button>
+        <button class="preset-btn" data-value="0_0 (: /-\ :) 0-0">"0_0 (: /-\ :) 0-0"</button>
+        <button class="preset-btn" data-value="not a palindrome">"not a palindrome"</button>
+        <button class="preset-btn" data-value="five|\_/|four">"five|\_/|four"</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
