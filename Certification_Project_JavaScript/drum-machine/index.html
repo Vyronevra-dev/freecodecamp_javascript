@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DM-909 // Rhythm Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="drum-machine" aria-label="DM-909 Rhythm Engine Drum Machine">
+    <div class="chassis">
+      <!-- Top Header -->
+      <header class="machine-header">
+        <div class="brand">
+          <div class="brand-badge">DM-909</div>
+          <div class="brand-title">RHYTHM ENGINE <span>// STUDIO PERCUSSION</span></div>
+        </div>
+        <div class="status-group">
+          <div class="status-pill">
+            <span class="power-led" id="power-led"></span>
+            <span id="power-label">ACTIVE</span>
+          </div>
+          <button type="button" class="power-btn" id="power-btn" aria-pressed="true" title="Toggle Power">
+            PWR
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Body -->
+      <div class="machine-body">
+        <!-- 3x3 Pad Matrix -->
+        <section class="pad-section" aria-label="Drum Pad Matrix">
+          <div id="pad-bank">
+            <!-- Row 1: Q, W, E -->
+            <button type="button" class="drum-pad" id="Heater-1" data-key="Q">Q<audio class="clip" id="Q" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-1.mp3" preload="auto"></audio></button>
+            <button type="button" class="drum-pad" id="Heater-2" data-key="W">W<audio class="clip" id="W" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-2.mp3" preload="auto"></audio></button>
+            <button type="button" class="drum-pad" id="Heater-3" data-key="E">E<audio class="clip" id="E" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-3.mp3" preload="auto"></audio></button>
+
+            <!-- Row 2: A, S, D -->
+            <button type="button" class="drum-pad" id="Heater-4" data-key="A">A<audio class="clip" id="A" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-4_1.mp3" preload="auto"></audio></button>
+            <button type="button" class="drum-pad" id="Clap" data-key="S">S<audio class="clip" id="S" src="https://cdn.freecodecamp.org/curriculum/drum/Heater-6.mp3" preload="auto"></audio></button>
+            <button type="button" class="drum-pad" id="Open-HH" data-key="D">D<audio class="clip" id="D" src="https://cdn.freecodecamp.org/curriculum/drum/Dsc_Oh.mp3" preload="auto"></audio></button>
+
+            <!-- Row 3: Z, X, C -->
+            <button type="button" class="drum-pad" id="Kick-n-Hat" data-key="Z">Z<audio class="clip" id="Z" src="https://cdn.freecodecamp.org/curriculum/drum/Kick_n_Hat.mp3" preload="auto"></audio></button>
+            <button type="button" class="drum-pad" id="Kick" data-key="X">X<audio class="clip" id="X" src="https://cdn.freecodecamp.org/curriculum/drum/RP4_KICK_1.mp3" preload="auto"></audio></button>
+            <button type="button" class="drum-pad" id="Closed-HH" data-key="C">C<audio class="clip" id="C" src="https://cdn.freecodecamp.org/curriculum/drum/Cev_H2.mp3" preload="auto"></audio></button>
+          </div>
+        </section>
+
+        <!-- Control Console -->
+        <aside class="control-section" aria-label="Control Console">
+          <!-- Backlit LCD Display -->
+          <div class="lcd-bezel">
+            <div class="lcd-header">
+              <span>VOICE // SAMPLE</span>
+              <span id="lcd-key-indicator">KEY: --</span>
+            </div>
+            <p id="display">READY</p>
+          </div>
+
+          <!-- Peak Level Meter -->
+          <div class="meter-panel">
+            <div class="control-label">
+              <span>OUTPUT LEVEL</span>
+              <span id="db-readout">-∞ dB</span>
+            </div>
+            <div class="led-meter" id="led-meter" aria-hidden="true">
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+              <div class="led-seg"></div>
+            </div>
+          </div>
+
+          <!-- Master Volume Control -->
+          <div class="volume-panel">
+            <div class="control-label">
+              <label for="volume-slider">MASTER GAIN</label>
+              <span id="volume-value">85%</span>
+            </div>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.85" />
+          </div>
+
+          <!-- Legend / Shortcut Guide -->
+          <div class="legend-panel">
+            <div class="legend-title">KEYBOARD MATRIX</div>
+            <div class="legend-grid">
+              <span><b>Q</b> Heater 1</span>
+              <span><b>W</b> Heater 2</span>
+              <span><b>E</b> Heater 3</span>
+              <span><b>A</b> Heater 4</span>
+              <span><b>S</b> Clap</span>
+              <span><b>D</b> Open-HH</span>
+              <span><b>Z</b> Kick-n'-Hat</span>
+              <span><b>X</b> Kick</span>
+              <span><b>C</b> Closed-HH</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
